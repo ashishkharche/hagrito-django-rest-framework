@@ -81,9 +81,11 @@ class UserViewSet(viewsets.ReadOnlyModelViewSet):
 # endregion
 
 
-@api_view(['GET'])
-def api_root(request, format=None):
-    return Response({
-        'users': reverse('user-list', request=request, format=format),
-        'snippets': reverse('snippet-list', request=request, format=format)
-    })
+# region api_root (The DefaultRouter class we're using also automatically creates the API root view for us, so we can now delete the api_root method from our views module.)
+# @api_view(['GET'])
+# def api_root(request, format=None):
+#     return Response({
+#         'users': reverse('user-list', request=request, format=format),
+#         'snippets': reverse('snippet-list', request=request, format=format)
+#     })
+# endregion
